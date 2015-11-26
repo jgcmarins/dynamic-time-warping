@@ -21,6 +21,7 @@ public class Main {
 	private static void task(ArrayList<Move> trainingMoves, ArrayList<Move> testMoves) {
 		int counter = 0;
 
+		long start = System.currentTimeMillis();
 		for(Move trainingm : trainingMoves) {
 			double minimumDistance = Double.POSITIVE_INFINITY;
 			int label = 0;
@@ -37,10 +38,15 @@ public class Main {
 				if(trainingm.getLabel().intValue() == label) counter++;
 			}
 		}
+		long end = System.currentTimeMillis();
 
 		double result = (double)counter/(double)trainingMoves.size();
 
-		System.out.println(result*100+"%");
+		long total = (end - start)/1000;
+
+		System.out.println("Numero de rotulos de treino: "+trainingMoves.size()
+							+" | Numero de rotulos  de teste: "+testMoves.size()
+							+" | Tempo: "+total+"s"+" | Taxa de acerto: "+result*100+"%");
 	}
 
 	public static void main(String args[]) {

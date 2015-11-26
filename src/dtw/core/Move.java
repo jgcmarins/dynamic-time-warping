@@ -14,33 +14,33 @@ import java.util.ArrayList;
 
 public class Move {
 
-	private Integer type;
+	private Integer label;
 	private ArrayList<Double> serie;
 
 	public Move() {
-		this.type = new Integer(0);
+		this.label = new Integer(0);
 		this.serie = new ArrayList<Double>();
 	}
 
-	public Move(Integer type) {
-		this.type = type;
+	public Move(Integer label) {
+		this.label = label;
 		this.serie = new ArrayList<Double>();
 	}
 
-	public Move(int type) {
-		this.type = new Integer(type);
+	public Move(int label) {
+		this.label = new Integer(label);
 		this.serie = new ArrayList<Double>();
 	}
 
-	public void setType(Integer type) { this.type = type; }
+	public void setLabel(Integer label) { this.label = label; }
 
-	public void setType(int type) { this.type = new Integer(type); }
+	public void setLabel(int label) { this.label = new Integer(label); }
 
 	public void setSerie(Double value) { this.serie.add(value); }
 
 	public void setSerie(double value) { this.serie.add(new Double(value)); }
 
-	public Integer getType() { return this.type; }
+	public Integer getLabel() { return this.label; }
 
 	public ArrayList<Double> getSerie() { return this.serie; }
 }

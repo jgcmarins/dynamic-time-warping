@@ -23,18 +23,18 @@ public class Main {
 
 		for(Move trainingm : trainingMoves) {
 			double minimumDistance = Double.POSITIVE_INFINITY;
-			int type = 0;
+			int label = 0;
 
 			for(Move testm : testMoves) {
 				double distance = DTW.DTWdistance(trainingm, testm);
 				if(distance < minimumDistance) {
 					minimumDistance = distance;
-					type = testm.getType().intValue();
+					label = testm.getLabel().intValue();
 				}
 			}
 
 			if(minimumDistance != Double.POSITIVE_INFINITY) {
-				if(trainingm.getType().intValue() == type) counter++;
+				if(trainingm.getLabel().intValue() == label) counter++;
 			}
 		}
 
